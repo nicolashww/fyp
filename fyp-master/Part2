@@ -1,0 +1,17 @@
+GetMask
+Crop out the biomass data
+Find rasterheight/width of uncollocated radar image + biomass data
+Map radar data --> biomass data
+(x,y) of biomass --> get the latlon of biomass in a list --> 
+find the (x,y) of radar image in a list
+
+coordsH = [(x , y), (X, y)]
+
+for x in range (0, len(coordsH)):
+    if not (coordsH[x][0] >= radarW) or (coordsH[x][1] >= radarH):            #Checks if coordinates is within the range of the target
+        for y in range (0, 100):
+        pix = raster_BandRadar.getPixelFloat((int(coordsH[x][0]) + y), (int(coordsH[x][1]) + y)
+        if (pix > 0):
+                pixelData.append(pix)
+                labels.append(2)
+
